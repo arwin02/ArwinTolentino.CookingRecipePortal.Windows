@@ -279,6 +279,139 @@ namespace ArwinTolentino.CookingRecipePortal.Windows.DAL
                 UnitMeasure = "1spoon,3/4,2cup",
                 Price = "110php"
             });
-        }
+            context.Users.Add(new Models.User()
+            {
+                UserID = Guid.Parse("01ce7c42-fc1b-4c5b-842e-99254ca14b01"),
+                FirstName = "Arwin",
+                LastName = "Tolentino",
+                Password = "wen02",
+                EmailAddress = "rwin.tolentino02@gmail.com"
+            });
+            context.Users.Add(new Models.User()
+            {
+                UserID = Guid.Parse("02ce7c42-fc1b-4c5b-842e-99254ca14b02"),
+                FirstName = "Larich",
+                LastName = "Morales",
+                Password = "larich10",
+                EmailAddress = "larichmorales@gmail.com"
+            });
+            context.Users.Add(new Models.User()
+            {
+                UserID = Guid.Parse("03ce7c42-fc1b-4c5b-842e-99254ca14b03"),
+                FirstName = "Wendhel",
+                LastName = "Aton",
+                Password = "aton11",
+                EmailAddress = "wendhelaton@gmail.com"
+            });
+            context.Users.Add(new Models.User()
+            {
+                UserID = Guid.Parse("04ce7c42-fc1b-4c5b-842e-99254ca14b04"),
+                FirstName = "Jane",
+                LastName = "Tiar",
+                Password = "ticar11",
+                EmailAddress = "janeticar11@gmail.com"
+            });
+            context.Users.Add(new Models.User()
+            {
+                UserID = Guid.Parse("05ce7c42-fc1b-4c5b-842e-99254ca14b05"),
+                FirstName = "Xyrille",
+                LastName = "Mamalateo",
+                Password = "xyanne13",
+                EmailAddress = "xyrilleann.mamalateo@gmail.com"
+            });
+            context.Users.Add(new Models.User()
+            {
+                UserID = Guid.Parse("06ce7c42-fc1b-4c5b-842e-99254ca14b06"),
+                FirstName = "Luisa",
+                LastName = "Reyes",
+                Password = "pangilinan09",
+                EmailAddress = "luisareyes09@gmail.com"
+            });
+            context.Users.Add(new Models.User()
+            {
+                UserID = Guid.Parse("07ce7c42-fc1b-4c5b-842e-99254ca14b07"),
+                FirstName = "Joy",
+                LastName = "Flores",
+                Password = "joyiie",
+                EmailAddress = "joyflores@gmail.com"
+            });
+            context.Users.Add(new Models.User()
+            {
+                UserID = Guid.Parse("08ce7c42-fc1b-4c5b-842e-99254ca14b08"),
+                FirstName = "Wesley",
+                LastName = "Alipio",
+                Password = "alipio22",
+                EmailAddress = "wesleyalipio@gmail.com"
+            });
+            context.Users.Add(new Models.User()
+            {
+                UserID = Guid.Parse("09ce7c42-fc1b-4c5b-842e-99254ca14b09"),
+                FirstName = "Reniel",
+                LastName = "David",
+                Password = "david89",
+                EmailAddress = "renieldavid@gmail.com"
+            });
+            context.Users.Add(new Models.User()
+            {
+                UserID = Guid.Parse("10ce7c42-fc1b-4c5b-842e-99254ca14b10"),
+                FirstName = "Arkian",
+                LastName = "Salenga",
+                Password = "arkian11",
+                EmailAddress = "arkiansalenga11@gmail.com"
+            });
+            context.Ingredients.Add(new Models.Ingredient()
+            {
+                Name = "Pork",
+                UnitMeasure = "Kilo Gram",
+            });
+            context.Ingredients.Add(new Models.Ingredient()
+            {
+                Name = "Beef",
+                UnitMeasure  = "Kili Gram",
+            });
+            context.Ingredients.Add(new Models.Ingredient()
+            {
+                Name = "Chiken",
+                UnitMeasure = "Kilo Gram",
+            });
+            context.Ingredients.Add(new Models.Ingredient()
+            {
+                Name = "Salt",
+                UnitMeasure = "spoon",
+            });
+            context.Ingredients.Add(new Models.Ingredient()
+            {
+                Name = "Water",
+                UnitMeasure  = "liter",
+            });
+            context.Ingredients.Add(new Models.Ingredient()
+            {
+                Name = "Soy Sauce",
+                UnitMeasure  = "liter",
+            });
+            context.Ingredients.Add(new Models.Ingredient()
+            {
+                Name = "Pepper",
+                UnitMeasure  = "spoon",
+            });
+            context.Ingredients.Add(new Models.Ingredient()
+            {
+                Name = "Egg",
+                UnitMeasure  = "piece",
+            });
+            context.Ingredients.Add(new Models.Ingredient()
+            {
+                Name = "Cabbage",
+                UnitMeasure = "Kilo Gram",
+            });
+            context.Ingredients.Add(new Models.Ingredient()
+            {
+                Name = "Carrots",
+                UnitMeasure = "Kilo Gram",
+            });
+            }
+
+
+
     }
 }

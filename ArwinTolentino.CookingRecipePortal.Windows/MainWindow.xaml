@@ -12,6 +12,8 @@
             <ColumnDefinition Width="213*"/>
         </Grid.ColumnDefinitions>
         <Button x:Name="btnRecipes" Content="RECIPES" HorizontalAlignment="Left" Margin="41,10,0,0" VerticalAlignment="Top" Width="130" Height="46" Click="btnRecipes_Click"/>
+        <Button x:Name="btnUsers" Content="Users" HorizontalAlignment="Left" Margin="41,106,0,0" VerticalAlignment="Top" Width="130" Height="46" Click="btnUsers_Click"/>
+        <Button x:Name="btnIngredients" Content="Ingredients" HorizontalAlignment="Left" Margin="41,198,0,0" VerticalAlignment="Top" Width="130" Height="46" Click="btnIngredients_Click"/>
 
     </Grid>
 </Window>

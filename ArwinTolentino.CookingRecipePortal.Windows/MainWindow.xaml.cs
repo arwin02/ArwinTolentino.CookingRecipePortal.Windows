@@ -37,5 +37,17 @@ namespace ArwinTolentino.CookingRecipePortal.Windows
             Recipes.List listWindows = new Recipes.List();
             listWindows.Show();
         }
+
+        private void btnUsers_Click(object sender, RoutedEventArgs e)
+        {
+            Users.UrList listWindows = new Users.UrList();
+            listWindows.Show();
+        }
+
+        private void btnIngredients_Click(object sender, RoutedEventArgs e)
+        {
+            Ingredients.IngList listwindows = new Ingredients.IngList();
+            listwindows.Show();
+        }
     }
 }

@@ -79,11 +79,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BLL\IngredientBLL.cs" />
     <Compile Include="BLL\RecipeBLL.cs" />
+    <Compile Include="BLL\UserBLL.cs" />
     <Compile Include="Helpers\Paged.cs" />
+    <Compile Include="Ingredients\IngList.xaml.cs">
+      <DependentUpon>IngList.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Recipes\List.xaml.cs">
       <DependentUpon>List.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Users\UrList.xaml.cs">
+      <DependentUpon>UrList.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Ingredients\IngList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -99,6 +111,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Recipes\List.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Users\UrList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

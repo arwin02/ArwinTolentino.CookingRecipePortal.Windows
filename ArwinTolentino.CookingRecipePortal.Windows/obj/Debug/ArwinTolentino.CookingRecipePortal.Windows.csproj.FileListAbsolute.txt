@@ -24,3 +24,7 @@ C:\Users\Arwin\Documents\ArwinTolentino.CookingRecipePortal.Windows\ArwinTolenti
 C:\Users\Arwin\Documents\ArwinTolentino.CookingRecipePortal.Windows\ArwinTolentino.CookingRecipePortal.Windows\obj\Debug\ArwinTolentino.CookingRecipePortal.Windows.pdb
 C:\Users\Arwin\Documents\ArwinTolentino.CookingRecipePortal.Windows\ArwinTolentino.CookingRecipePortal.Windows\obj\Debug\Recipes\List.g.cs
 C:\Users\Arwin\Documents\ArwinTolentino.CookingRecipePortal.Windows\ArwinTolentino.CookingRecipePortal.Windows\obj\Debug\Recipes\List.baml
+C:\Users\Arwin\Documents\ArwinTolentino.CookingRecipePortal.Windows\ArwinTolentino.CookingRecipePortal.Windows\obj\Debug\Ingredients\IngList.g.cs
+C:\Users\Arwin\Documents\ArwinTolentino.CookingRecipePortal.Windows\ArwinTolentino.CookingRecipePortal.Windows\obj\Debug\Users\UrList.g.cs
+C:\Users\Arwin\Documents\ArwinTolentino.CookingRecipePortal.Windows\ArwinTolentino.CookingRecipePortal.Windows\obj\Debug\Ingredients\IngList.baml
+C:\Users\Arwin\Documents\ArwinTolentino.CookingRecipePortal.Windows\ArwinTolentino.CookingRecipePortal.Windows\obj\Debug\Users\UrList.baml
