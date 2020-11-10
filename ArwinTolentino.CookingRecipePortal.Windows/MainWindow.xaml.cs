@@ -26,10 +26,10 @@ namespace ArwinTolentino.CookingRecipePortal.Windows
             InitializeComponent();
             CookingRecipePortalDBContext context = new CookingRecipePortalDBContext();
             var Recipe = context.Recipes.FirstOrDefault();
-            
-            
-                MessageBox.Show(Recipe.UnitMeasure);
-            
+
+
+            MessageBox.Show(Recipe.UnitMeasure);
+
         }
 
         private void btnRecipes_Click(object sender, RoutedEventArgs e)
@@ -49,5 +49,15 @@ namespace ArwinTolentino.CookingRecipePortal.Windows
             Ingredients.IngList listwindows = new Ingredients.IngList();
             listwindows.Show();
         }
+     
+
+        private void btnTags_Click(object sender, RoutedEventArgs e)
+        {
+            Tags.TgList listwindows = new Tags.TgList();
+            listwindows.Show();
+
+        }
     }
+
 }
+

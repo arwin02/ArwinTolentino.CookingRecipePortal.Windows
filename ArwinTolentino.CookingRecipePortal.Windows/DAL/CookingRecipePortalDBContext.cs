@@ -16,7 +16,6 @@ namespace ArwinTolentino.CookingRecipePortal.Windows.DAL
         }
         public DbSet<Models.User> Users { get; set; }
         public DbSet<Models.Recipe> Recipes { get; set; }
-        public DbSet<Models.Instruction> Instructions { get; set; }
         public DbSet<Models.Ingredient> Ingredients { get; set; }
         public DbSet<Models.Tag> Tags { get; set; }
 

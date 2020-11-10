@@ -10,14 +10,15 @@ namespace ArwinTolentino.CookingRecipePortal.Windows.DAL
     {
         protected override void Seed(CookingRecipePortalDBContext context)
         {
-           context.Recipes.Add(new Models.Recipe()
-           { RecipeID = Guid.Parse("64ce7c42-fc1b-4c5b-842e-99254ca14bb1"), 
-             Title = "Caldereta",
-             Instruction = "1.2.3.4.5.",
-             Ingredients = "Beef,TomatoSauce,Reno",
-             UnitMeasure = "1spoon,3/4,2cup",
-             Price = "70php"
-           });
+            context.Recipes.Add(new Models.Recipe()
+            {
+                RecipeID = Guid.Parse("64ce7c42-fc1b-4c5b-842e-99254ca14bb1"),
+                Title = "Caldereta",
+                Instruction = "1.2.3.4.5.",
+                Ingredients = "Beef,TomatoSauce,Reno",
+                UnitMeasure = "1spoon,3/4,2cup",
+                Price = "70php"
+            });
             context.Recipes.Add(new Models.Recipe()
             {
                 RecipeID = Guid.Parse("64ce7c42-fc1b-4c5b-842e-99254ca14bb2"),
@@ -367,7 +368,7 @@ namespace ArwinTolentino.CookingRecipePortal.Windows.DAL
             context.Ingredients.Add(new Models.Ingredient()
             {
                 Name = "Beef",
-                UnitMeasure  = "Kili Gram",
+                UnitMeasure = "Kilo Gram",
             });
             context.Ingredients.Add(new Models.Ingredient()
             {
@@ -382,22 +383,22 @@ namespace ArwinTolentino.CookingRecipePortal.Windows.DAL
             context.Ingredients.Add(new Models.Ingredient()
             {
                 Name = "Water",
-                UnitMeasure  = "liter",
+                UnitMeasure = "liter",
             });
             context.Ingredients.Add(new Models.Ingredient()
             {
                 Name = "Soy Sauce",
-                UnitMeasure  = "liter",
+                UnitMeasure = "liter",
             });
             context.Ingredients.Add(new Models.Ingredient()
             {
                 Name = "Pepper",
-                UnitMeasure  = "spoon",
+                UnitMeasure = "spoon",
             });
             context.Ingredients.Add(new Models.Ingredient()
             {
                 Name = "Egg",
-                UnitMeasure  = "piece",
+                UnitMeasure = "piece",
             });
             context.Ingredients.Add(new Models.Ingredient()
             {
@@ -409,7 +410,17 @@ namespace ArwinTolentino.CookingRecipePortal.Windows.DAL
                 Name = "Carrots",
                 UnitMeasure = "Kilo Gram",
             });
-            }
+            context.Tags.Add(new Models.Tag()
+            {
+                Title = "Appetizer",
+                Price = "65php to 100php",
+            });
+            context.Tags.Add(new Models.Tag()
+            {
+                Title = "Dessert",
+                Price = "35php to 60php",
+            });
+        }
 
 
 

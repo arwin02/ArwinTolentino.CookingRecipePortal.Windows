@@ -11,9 +11,10 @@
             <ColumnDefinition Width="580*"/>
             <ColumnDefinition Width="213*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="btnRecipes" Content="RECIPES" HorizontalAlignment="Left" Margin="41,10,0,0" VerticalAlignment="Top" Width="130" Height="46" Click="btnRecipes_Click"/>
-        <Button x:Name="btnUsers" Content="Users" HorizontalAlignment="Left" Margin="41,106,0,0" VerticalAlignment="Top" Width="130" Height="46" Click="btnUsers_Click"/>
-        <Button x:Name="btnIngredients" Content="Ingredients" HorizontalAlignment="Left" Margin="41,198,0,0" VerticalAlignment="Top" Width="130" Height="46" Click="btnIngredients_Click"/>
+        <Button x:Name="btnRecipes" Content="RECIPES" HorizontalAlignment="Left" Margin="41,30,0,0" VerticalAlignment="Top" Width="130" Height="46" Click="btnRecipes_Click"/>
+        <Button x:Name="btnUsers" Content="USERS" HorizontalAlignment="Left" Margin="41,81,0,0" VerticalAlignment="Top" Width="130" Height="46" Click="btnUsers_Click"/>
+        <Button x:Name="btnIngredients" Content="INGREDIENTS" HorizontalAlignment="Left" Margin="41,132,0,0" VerticalAlignment="Top" Width="130" Height="46" Click="btnIngredients_Click"/>
+        <Button x:Name="btnTags" Content="TAGS" HorizontalAlignment="Left" Margin="41,183,0,0" VerticalAlignment="Top" Width="130" Height="46" Click="btnTags_Click"/>
 
     </Grid>
 </Window>
