@@ -1,0 +1,23 @@
+﻿<Window x:Class="ArwinTolentino.CookingRecipePortal.Windows.Ingredients.IngAdd"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ArwinTolentino.CookingRecipePortal.Windows.Ingredients"
+        mc:Ignorable="d"
+        Title="IngAdd" Height="450" Width="800">
+    <Grid x:Name="txtUnitofmeasure">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="132*"/>
+            <RowDefinition Height="287*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="lblAddNewIngredients" Content="Add New Ingredients" HorizontalAlignment="Left" Height="48" Margin="10,10,0,0" VerticalAlignment="Top" Width="362" FontSize="18"/>
+        <Label x:Name="lblName" Content="Name" HorizontalAlignment="Left" Margin="26,63,0,0" VerticalAlignment="Top" Width="125"/>
+        <Label Content="Unit of Measure" HorizontalAlignment="Left" Margin="26,94,0,0" VerticalAlignment="Top" Width="125"/>
+        <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="31" Margin="190,58,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="282"/>
+        <TextBox x:Name="txtUnitofMeasure" HorizontalAlignment="Left" Height="31" Margin="190,94,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="282"/>
+        <Button x:Name="btnAdd" Content="ADD" HorizontalAlignment="Left" Margin="190,154,0,0" VerticalAlignment="Top" Width="101" Height="35" FontSize="14" Grid.Row="1" Click="btnAdd_Click"/>
+        <Button x:Name="btnCancel" Content="CANCEL" HorizontalAlignment="Left" Height="35" Margin="322,154,0,0" VerticalAlignment="Top" Width="101" FontSize="14" Grid.Row="1" Click="Button_Click"/>
+
+    </Grid>
+</Window>

@@ -15,7 +15,7 @@ namespace ArwinTolentino.CookingRecipePortal.Windows.BLL
         public static Paged<Models.User> Search(int pageIndex = 1, int pageSize = 1, string sortBy = "First Name, Last Name", string sortOrder = "asc", string keyword = "")
         {
             IQueryable<User> allUser = (IQueryable<User>)db.Users;
-            Paged<Models.User> Users = new Paged<Models.User>();
+            Paged<Models.User> users = new Paged<Models.User>();
 
             if (!string.IsNullOrEmpty(keyword))
             {
@@ -29,26 +29,51 @@ namespace ArwinTolentino.CookingRecipePortal.Windows.BLL
 
             if (sortBy.ToLower() == "FirstName" && sortOrder.ToLower() == "asc")
             {
-                Users.Items = allUser.OrderBy(e => e.FirstName).Skip(skip).Take(pageSize).ToList();
+                users.Items = allUser.OrderBy(e => e.FirstName).Skip(skip).Take(pageSize).ToList();
             }
             else if (sortBy.ToLower() == "FirstName" && sortOrder.ToLower() == "desc")
             {
-                Users.Items = allUser.OrderByDescending(e => e.FirstName).Skip(skip).Take(pageSize).ToList();
+                users.Items = allUser.OrderByDescending(e => e.FirstName).Skip(skip).Take(pageSize).ToList();
             }
             else if (sortBy.ToLower() == "LastName" && sortOrder.ToLower() == "asc")
             {
-                Users.Items = allUser.OrderBy(e => e.LastName).Skip(skip).Take(pageSize).ToList();
+                users.Items = allUser.OrderBy(e => e.LastName).Skip(skip).Take(pageSize).ToList();
             }
             else
             {
-                Users.Items = allUser.OrderByDescending(e => e.LastName).Skip(skip).Take(pageSize).ToList();
+                users.Items = allUser.OrderByDescending(e => e.LastName).Skip(skip).Take(pageSize).ToList();
             }
-            Users.PageCount = pageCount;
-            Users.QueryCount = queryCount;
-            Users.PageIndex = pageIndex;
-            Users.PageSize = pageSize;
+            users.PageCount = pageCount;
+            users.QueryCount = queryCount;
+            users.PageIndex = pageIndex;
+            users.PageSize = pageSize;
 
-            return Users;
+            return users;
+        }
+        public static Operation Add(User users)
+        {
+            try
+            {
+                db.Users.Add(users);
+                db.SaveChanges();
+
+                return new Operation()
+
+                {
+                    Code = "200",
+                    Message = "ok",
+
+                };
+
+            }
+            catch (Exception e)
+            {
+                return new Operation()
+                {
+                    Code = "500",
+                    Message = e.Message
+                };
+            }
         }
     }
 }

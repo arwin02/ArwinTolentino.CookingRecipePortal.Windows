@@ -12,14 +12,15 @@
         <Button x:Name="btnPrev" Content="PREV." HorizontalAlignment="Left" Margin="685,149,0,0" VerticalAlignment="Top" Width="73" Click="btnPrev_Click" Height="35"/>
         <Button x:Name="btnFirst" Content="FIRST" HorizontalAlignment="Left" Margin="684,189,0,0" VerticalAlignment="Top" Width="74" Click="btnFirst_Click" Height="38"/>
         <Button x:Name="btnLast" Content="LAST" HorizontalAlignment="Left" Margin="684,232,0,0" VerticalAlignment="Top" Width="74" Click="btnLast_Click" Height="38"/>
-        <Label x:Name="lblPageSize" Content="PAGE SIZE" HorizontalAlignment="Left" Margin="684,320,0,0" VerticalAlignment="Top" Width="73" FontWeight="Bold"/>
-        <TextBox x:Name="txtPageSize" HorizontalAlignment="Left" Height="40" Margin="686,275,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="73" TextChanged="txtPageSize_TextChanged"/>
+        <Label x:Name="lblPageSize" Content="PAGE SIZE" HorizontalAlignment="Left" Margin="684,359,0,0" VerticalAlignment="Top" Width="73" FontWeight="Bold"/>
+        <TextBox x:Name="txtPageSize" HorizontalAlignment="Left" Height="35" Margin="684,319,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="73" TextChanged="txtPageSize_TextChanged"/>
         <Label x:Name="lblSortby" Content="SORT BY ;" HorizontalAlignment="Left" Margin="444,21,0,0" VerticalAlignment="Top" Width="155" Height="26" FontWeight="Bold"/>
         <TextBox x:Name="txtFilters" HorizontalAlignment="Left" Height="37" Margin="27,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="385"  KeyDown="txtFilters_KeyDown"/>
         <Label x:Name="lblFilters" Content="FILTERS :" HorizontalAlignment="Left" Margin="27,21,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="385"/>
         <Label x:Name="lblSortOrder" Content="SORT ORDER :" HorizontalAlignment="Left" Margin="604,21,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.342,-0.288" Width="155" Height="26" FontWeight="Bold"/>
         <ComboBox x:Name="cboSortBy" HorizontalAlignment="Left" Margin="444,56,0,0" VerticalAlignment="Top" Width="155" Height="37" SelectionChanged="cboSortBy_SelectionChanged"/>
         <ComboBox x:Name="cboSortOrder" HorizontalAlignment="Left" Margin="604,55,0,0" VerticalAlignment="Top" Width="154" Height="38" SelectionChanged="cboSortOrder_SelectionChanged"/>
+        <Button x:Name="btnAddNew" Content="ADD NEW" HorizontalAlignment="Left" Height="38" Margin="683,276,0,0" VerticalAlignment="Top" Width="74" Click="btnAddNew_Click"/>
 
     </Grid>
 </Window>

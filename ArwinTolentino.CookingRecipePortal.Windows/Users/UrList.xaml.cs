@@ -116,5 +116,11 @@ namespace ArwinTolentino.CookingRecipePortal.Windows.Users
             }
             InitializeComponent();
         }
+
+        private void btnAddNew_Click(object sender, RoutedEventArgs e)
+        {
+            UserAdd addWindow = new Users.UserAdd(this);
+            addWindow.Show();
+        }
     }
 }

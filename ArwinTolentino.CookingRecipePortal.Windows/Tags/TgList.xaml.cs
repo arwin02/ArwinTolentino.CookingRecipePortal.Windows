@@ -117,6 +117,12 @@ namespace ArwinTolentino.CookingRecipePortal.Windows.Tags
         {
 
         }
+
+        private void btnAddNew_Click(object sender, RoutedEventArgs e)
+        {
+            TagAdd addWindow = new Tags.TagAdd(this);
+            addWindow.Show();
+        }
     }
     }
 

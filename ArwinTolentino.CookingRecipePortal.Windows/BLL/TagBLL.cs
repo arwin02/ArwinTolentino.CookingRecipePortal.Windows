@@ -15,7 +15,7 @@ namespace ArwinTolentino.CookingRecipePortal.Windows.BLL
         public static Paged<Models.Tag> Search(int pageIndex = 1, int pageSize = 1, string sortBy = "Title, Price", string sortOrder = "asc", string keyword = "")
         {
             IQueryable<Tag> allTag = (IQueryable<Tag>)db.Tags;
-            Paged<Models.Tag> Tags = new Paged<Models.Tag>();
+            Paged<Models.Tag> tags = new Paged<Models.Tag>();
 
             if (!string.IsNullOrEmpty(keyword))
             {
@@ -29,27 +29,52 @@ namespace ArwinTolentino.CookingRecipePortal.Windows.BLL
 
             if (sortBy.ToLower() == "Title" && sortOrder.ToLower() == "asc")
             {
-                Tags.Items = allTag.OrderBy(e => e.Title).Skip(skip).Take(pageSize).ToList();
+                tags.Items = allTag.OrderBy(e => e.Title).Skip(skip).Take(pageSize).ToList();
             }
             else if (sortBy.ToLower() == "Title" && sortOrder.ToLower() == "desc")
             {
-                Tags.Items = allTag.OrderByDescending(e => e.Title).Skip(skip).Take(pageSize).ToList();
+                tags.Items = allTag.OrderByDescending(e => e.Title).Skip(skip).Take(pageSize).ToList();
             }
             else if (sortBy.ToLower() == "Price" && sortOrder.ToLower() == "asc")
             {
-                Tags.Items = allTag.OrderBy(e => e.Price).Skip(skip).Take(pageSize).ToList();
+                tags.Items = allTag.OrderBy(e => e.Price).Skip(skip).Take(pageSize).ToList();
             }
             else
             {
-                Tags.Items = allTag.OrderByDescending(e => e.Price).Skip(skip).Take(pageSize).ToList();
+                tags.Items = allTag.OrderByDescending(e => e.Price).Skip(skip).Take(pageSize).ToList();
             }
-            Tags.PageCount = pageCount;
-            Tags.QueryCount = queryCount;
-            Tags.PageIndex = pageIndex;
-            Tags.PageSize = pageSize;
+            tags.PageCount = pageCount;
+            tags.QueryCount = queryCount;
+            tags.PageIndex = pageIndex;
+            tags.PageSize = pageSize;
 
-            return Tags;
+            return tags;
 
+        }
+        public static Operation Add(Tag tags)
+        {
+            try
+            {
+                db.Tags.Add(tags);
+                db.SaveChanges();
+
+                return new Operation()
+
+                {
+                    Code = "200",
+                    Message = "ok",
+
+                };
+
+            }
+            catch (Exception e)
+            {
+                return new Operation()
+                {
+                    Code = "500",
+                    Message = e.Message
+                };
+            }
         }
     }
 }

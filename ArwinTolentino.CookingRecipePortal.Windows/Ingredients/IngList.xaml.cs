@@ -116,5 +116,11 @@ namespace ArwinTolentino.CookingRecipePortal.Windows.Ingredients
 
         }
 
+        private void btnAddNew_Click(object sender, RoutedEventArgs e)
+        {
+            IngAdd addWindow = new Ingredients.IngAdd(this);
+            addWindow.Show();
+
+        }
     }
 }

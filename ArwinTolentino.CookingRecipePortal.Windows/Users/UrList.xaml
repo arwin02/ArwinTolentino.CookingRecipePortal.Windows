@@ -19,12 +19,13 @@
         <Button x:Name="btnPrev" Content="PREV." Grid.Column="1" HorizontalAlignment="Left" Margin="362,178,0,0" VerticalAlignment="Top" Width="84" Height="38" Grid.ColumnSpan="2"/>
         <Button x:Name="btnFirst" Content="FIRST" Grid.Column="1" HorizontalAlignment="Left" Margin="362,221,0,0" VerticalAlignment="Top" Width="84" Height="38" Grid.ColumnSpan="2"/>
         <Button x:Name="btnLast" Content="LAST" Grid.Column="1" HorizontalAlignment="Left" Margin="362,264,0,0" VerticalAlignment="Top" Width="84" Height="35" Grid.ColumnSpan="2"/>
-        <Label x:Name="lblPageSize" Content="PAGE SIZE" Grid.Column="1" HorizontalAlignment="Left" Margin="362,348,0,0" VerticalAlignment="Top" Width="84" Height="46" FontWeight="Bold" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="txtPageSize" Grid.Column="1" HorizontalAlignment="Left" Height="39" Margin="362,304,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="84" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblPageSize" Content="PAGE SIZE" Grid.Column="1" HorizontalAlignment="Left" Margin="362,386,0,0" VerticalAlignment="Top" Width="84" Height="23" FontWeight="Bold" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txtPageSize" Grid.Column="1" HorizontalAlignment="Left" Height="39" Margin="362,347,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="84" Grid.ColumnSpan="2"/>
         <ComboBox x:Name="cboSortOrder" Grid.Column="1" HorizontalAlignment="Left" Margin="302,70,0,0" VerticalAlignment="Top" Width="144" Height="36" Grid.ColumnSpan="2"/>
         <ComboBox x:Name="cboSortBy" Grid.Column="1" HorizontalAlignment="Left" Margin="153,70,0,0" VerticalAlignment="Top" Width="144" Height="36"/>
         <Label x:Name="lblSortBy" Content="SORT BY :" Grid.Column="1" HorizontalAlignment="Left" Margin="153,30,0,0" VerticalAlignment="Top" Width="144" Height="34" FontWeight="Bold"/>
         <Label x:Name="lblSortOrder" Content="SORT ORDER :" Grid.Column="1" HorizontalAlignment="Left" Margin="302,30,0,0" VerticalAlignment="Top" Height="32" Width="144" FontWeight="Bold" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnAddNew" Content="ADD NEW" Grid.Column="1" HorizontalAlignment="Left" Height="35" Margin="362,304,0,0" VerticalAlignment="Top" Width="84" Grid.ColumnSpan="2" Click="btnAddNew_Click"/>
 
     </Grid>
 </Window>

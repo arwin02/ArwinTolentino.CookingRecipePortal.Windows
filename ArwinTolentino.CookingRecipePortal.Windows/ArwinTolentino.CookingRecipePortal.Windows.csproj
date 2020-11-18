@@ -83,12 +83,22 @@
     <Compile Include="BLL\RecipeBLL.cs" />
     <Compile Include="BLL\TagBLL.cs" />
     <Compile Include="BLL\UserBLL.cs" />
+    <Compile Include="Helpers\Operation.cs" />
     <Compile Include="Helpers\Paged.cs" />
+    <Compile Include="Ingredients\IngAdd.xaml.cs">
+      <DependentUpon>IngAdd.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Ingredients\IngList.xaml.cs">
       <DependentUpon>IngList.xaml</DependentUpon>
     </Compile>
     <Compile Include="Recipes\List.xaml.cs">
       <DependentUpon>List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Recipes\RecipeAdd.xaml.cs">
+      <DependentUpon>RecipeAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tags\TagAdd.xaml.cs">
+      <DependentUpon>TagAdd.xaml</DependentUpon>
     </Compile>
     <Compile Include="Tags\TgList.xaml.cs">
       <DependentUpon>TgList.xaml</DependentUpon>
@@ -96,6 +106,13 @@
     <Compile Include="Users\UrList.xaml.cs">
       <DependentUpon>UrList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Users\UserAdd.xaml.cs">
+      <DependentUpon>UserAdd.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Ingredients\IngAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Ingredients\IngList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -118,11 +135,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Recipes\RecipeAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tags\TagAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Tags\TgList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Users\UrList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Users\UserAdd.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -16,7 +16,7 @@ namespace ArwinTolentino.CookingRecipePortal.Windows.BLL
         public static Paged<Models.Recipe> Search(int pageIndex = 1, int pageSize = 1, string sortBy = "title,", string sortOrder = "asc", string keyword = "")
         {
             IQueryable<Recipe> allRecipes = (IQueryable<Recipe>)db.Recipes;
-            Paged<Models.Recipe> Recipes = new Paged<Models.Recipe>();
+            Paged<Models.Recipe> recipes = new Paged<Models.Recipe>();
 
             if (!string.IsNullOrEmpty(keyword))
             {
@@ -30,26 +30,51 @@ namespace ArwinTolentino.CookingRecipePortal.Windows.BLL
 
             if (sortBy.ToLower() == "title" && sortOrder.ToLower() == "asc")
             {
-                Recipes.Items = allRecipes.OrderBy(e => e.Title).Skip(skip).Take(pageSize).ToList();
+                recipes.Items = allRecipes.OrderBy(e => e.Title).Skip(skip).Take(pageSize).ToList();
             }
             else if (sortBy.ToLower() == "title" && sortOrder.ToLower() == "desc")
             {
-                Recipes.Items = allRecipes.OrderByDescending(e => e.Title).Skip(skip).Take(pageSize).ToList();
+                recipes.Items = allRecipes.OrderByDescending(e => e.Title).Skip(skip).Take(pageSize).ToList();
             }
             else if (sortBy.ToLower() == "price" && sortOrder.ToLower() == "asc")
             {
-                Recipes.Items = allRecipes.OrderBy(e => e.Price).Skip(skip).Take(pageSize).ToList();
+                recipes.Items = allRecipes.OrderBy(e => e.Price).Skip(skip).Take(pageSize).ToList();
             }
             else
             {
-                Recipes.Items = allRecipes.OrderByDescending(e => e.Price).Skip(skip).Take(pageSize).ToList();
+                recipes.Items = allRecipes.OrderByDescending(e => e.Price).Skip(skip).Take(pageSize).ToList();
             }
-            Recipes.PageCount = pageCount;
-            Recipes.QueryCount = queryCount;
-            Recipes.PageIndex = pageIndex;
-            Recipes.PageSize = pageSize;
+            recipes.PageCount = pageCount;
+            recipes.QueryCount = queryCount;
+            recipes.PageIndex = pageIndex;
+            recipes.PageSize = pageSize;
 
-            return Recipes;
+            return recipes;
+        }
+        public static Operation Add(Recipe recipes)
+        {
+            try
+            {
+                db.Recipes.Add(recipes);
+                db.SaveChanges();
+
+                return new Operation()
+
+                {
+                    Code = "200",
+                    Message = "ok",
+                    ReferenceId =  recipes.RecipeID
+                };
+
+            }
+            catch (Exception e)
+            {
+                return new Operation()
+                {
+                    Code = "500",
+                    Message = e.Message
+                };
+            }
         }
     }
 }

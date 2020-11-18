@@ -30,3 +30,11 @@ C:\Users\Arwin\Documents\ArwinTolentino.CookingRecipePortal.Windows\ArwinTolenti
 C:\Users\Arwin\Documents\ArwinTolentino.CookingRecipePortal.Windows\ArwinTolentino.CookingRecipePortal.Windows\obj\Debug\Users\UrList.baml
 C:\Users\Arwin\Documents\ArwinTolentino.CookingRecipePortal.Windows\ArwinTolentino.CookingRecipePortal.Windows\obj\Debug\Tags\TgList.g.cs
 C:\Users\Arwin\Documents\ArwinTolentino.CookingRecipePortal.Windows\ArwinTolentino.CookingRecipePortal.Windows\obj\Debug\Tags\TgList.baml
+C:\Users\Arwin\Documents\ArwinTolentino.CookingRecipePortal.Windows\ArwinTolentino.CookingRecipePortal.Windows\obj\Debug\Ingredients\IngAdd.g.cs
+C:\Users\Arwin\Documents\ArwinTolentino.CookingRecipePortal.Windows\ArwinTolentino.CookingRecipePortal.Windows\obj\Debug\Ingredients\IngAdd.baml
+C:\Users\Arwin\Documents\ArwinTolentino.CookingRecipePortal.Windows\ArwinTolentino.CookingRecipePortal.Windows\obj\Debug\Recipes\RecipeAdd.g.cs
+C:\Users\Arwin\Documents\ArwinTolentino.CookingRecipePortal.Windows\ArwinTolentino.CookingRecipePortal.Windows\obj\Debug\Tags\TagAdd.g.cs
+C:\Users\Arwin\Documents\ArwinTolentino.CookingRecipePortal.Windows\ArwinTolentino.CookingRecipePortal.Windows\obj\Debug\Users\UserAdd.g.cs
+C:\Users\Arwin\Documents\ArwinTolentino.CookingRecipePortal.Windows\ArwinTolentino.CookingRecipePortal.Windows\obj\Debug\Recipes\RecipeAdd.baml
+C:\Users\Arwin\Documents\ArwinTolentino.CookingRecipePortal.Windows\ArwinTolentino.CookingRecipePortal.Windows\obj\Debug\Tags\TagAdd.baml
+C:\Users\Arwin\Documents\ArwinTolentino.CookingRecipePortal.Windows\ArwinTolentino.CookingRecipePortal.Windows\obj\Debug\Users\UserAdd.baml

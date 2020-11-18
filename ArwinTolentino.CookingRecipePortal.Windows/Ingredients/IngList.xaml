@@ -16,14 +16,15 @@
         <Button x:Name="btnPrev" Content="PREV." HorizontalAlignment="Left" VerticalAlignment="Top" Width="86" Grid.Column="1" Margin="189,155,0,0" Height="40"/>
         <Button x:Name="btnFirst" Content="FIRST " Grid.Column="1" HorizontalAlignment="Left" Margin="189,200,0,0" VerticalAlignment="Top" Width="86" Height="40"/>
         <Button x:Name="btnLast" Content="LAST" Grid.Column="1" HorizontalAlignment="Left" Margin="189,245,0,0" VerticalAlignment="Top" Width="86" Height="40"/>
-        <TextBox x:Name="txtPageSize" Grid.Column="1" HorizontalAlignment="Left" Height="42" Margin="189,290,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="86"/>
-        <Label x:Name="lblPageSize" Content="PAGE SIZE" Grid.Column="1" HorizontalAlignment="Left" Margin="189,337,0,0" VerticalAlignment="Top" Width="86" Height="44"/>
+        <TextBox x:Name="txtPageSize" Grid.Column="1" HorizontalAlignment="Left" Height="40" Margin="189,335,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="86"/>
+        <Label x:Name="lblPageSize" Content="PAGE SIZE" Grid.Column="1" HorizontalAlignment="Left" Margin="189,380,0,0" VerticalAlignment="Top" Width="86" Height="29"/>
         <ComboBox x:Name="cboSortOrder" Grid.Column="1" HorizontalAlignment="Left" Margin="122,59,0,0" VerticalAlignment="Top" Width="153" Height="31"/>
         <ComboBox x:Name="cboSortBy" HorizontalAlignment="Left" Height="31" Margin="449,59,0,0" VerticalAlignment="Top" Width="153" Grid.ColumnSpan="2"/>
         <TextBox x:Name="txtFilters" HorizontalAlignment="Left" Height="31" Margin="27,59,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="402"/>
         <Label x:Name="lblFilters" Content="FILTERS :" HorizontalAlignment="Left" Margin="27,28,0,0" VerticalAlignment="Top" Width="152" FontWeight="Bold" Height="26"/>
         <Label x:Name="lblSortOrder1" Grid.ColumnSpan="2" Content="SORT BY :" HorizontalAlignment="Left" Height="26" Margin="449,28,0,0" VerticalAlignment="Top" Width="153" FontWeight="Bold"/>
         <Label x:Name="lblSortOrder" Content="SORT ORDER :" Grid.Column="1" HorizontalAlignment="Left" Margin="122,29,0,0" VerticalAlignment="Top" Width="153" FontWeight="Bold"/>
+        <Button x:Name="btnAddNew" Content="ADD NEW" Grid.Column="1" HorizontalAlignment="Left" Height="40" Margin="189,290,0,0" VerticalAlignment="Top" Width="86" Click="btnAddNew_Click"/>
 
     </Grid>
 </Window>

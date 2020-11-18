@@ -50,5 +50,30 @@ namespace ArwinTolentino.CookingRecipePortal.Windows.BLL
 
             return Ingredients;
         }
+        public static Operation Add(Ingredient ingredient)
+        {
+            try
+            {
+                db.Ingredients.Add(ingredient);
+                db.SaveChanges();
+
+                return new Operation()
+
+                {
+                    Code = "200",
+                    Message = "ok",
+                  
+                };
+
+            }
+            catch (Exception e)
+            {
+                return new Operation()
+                {
+                    Code = "500",
+                    Message = e.Message
+                };
+            }
+        }
     }
 }
