@@ -13,7 +13,7 @@
         </Grid.RowDefinitions>
         <Label x:Name="lblAddNewIngredients" Content="Add New Ingredients" HorizontalAlignment="Left" Height="48" Margin="10,10,0,0" VerticalAlignment="Top" Width="362" FontSize="18"/>
         <Label x:Name="lblName" Content="Name" HorizontalAlignment="Left" Margin="26,63,0,0" VerticalAlignment="Top" Width="125"/>
-        <Label Content="Unit of Measure" HorizontalAlignment="Left" Margin="26,94,0,0" VerticalAlignment="Top" Width="125"/>
+        <Label x:Name="lblUnitofmeasure" Content="Unit of Measure" HorizontalAlignment="Left" Margin="26,94,0,0" VerticalAlignment="Top" Width="125"/>
         <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="31" Margin="190,58,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="282"/>
         <TextBox x:Name="txtUnitofMeasure" HorizontalAlignment="Left" Height="31" Margin="190,94,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="282"/>
         <Button x:Name="btnAdd" Content="ADD" HorizontalAlignment="Left" Margin="190,154,0,0" VerticalAlignment="Top" Width="101" Height="35" FontSize="14" Grid.Row="1" Click="btnAdd_Click"/>

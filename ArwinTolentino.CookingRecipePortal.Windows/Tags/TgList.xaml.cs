@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using ArwinTolentino.CookingRecipePortal.Windows.BLL;
+using ArwinTolentino.CookingRecipePortal.Windows.Models;
 
 namespace ArwinTolentino.CookingRecipePortal.Windows.Tags
 {
@@ -23,7 +24,7 @@ namespace ArwinTolentino.CookingRecipePortal.Windows.Tags
             private string sortBy = "Title";
             private string sortOrder = "asc";
             private string keyword = "";
-            private int pageSize = 5;
+            private int pageSize = 1;
             private int pageIndex = 1;
             private long pageCount = 1;
             public TgList()
@@ -35,7 +36,7 @@ namespace ArwinTolentino.CookingRecipePortal.Windows.Tags
                 showData();
 
             }
-            private void showData()
+            public void showData()
             {
                 var Tags = TagBLL.Search(pageIndex, pageSize, sortBy, sortOrder, keyword);
                 dgTag.ItemsSource = Tags.Items;
@@ -122,6 +123,18 @@ namespace ArwinTolentino.CookingRecipePortal.Windows.Tags
         {
             TagAdd addWindow = new Tags.TagAdd(this);
             addWindow.Show();
+        }
+        private void btnUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            Tag tag = ((FrameworkElement)sender).DataContext as Tag;
+            TagUpdate updateForm = new TagUpdate(tag, this);
+            updateForm.Show();
+
+        }
+
+        private void txtPageSize_TextChanged(object sender, KeyEventArgs e)
+        {
+
         }
     }
     }

@@ -420,9 +420,7 @@ namespace ArwinTolentino.CookingRecipePortal.Windows.DAL
                 Title = "Dessert",
                 Price = "35php to 60php",
             });
+            context.SaveChanges();
         }
-
-
-
     }
 }

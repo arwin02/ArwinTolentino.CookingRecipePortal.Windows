@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using ArwinTolentino.CookingRecipePortal.Windows.BLL;
+using ArwinTolentino.CookingRecipePortal.Windows.Models;
 
 namespace ArwinTolentino.CookingRecipePortal.Windows.Users
 {
@@ -36,7 +37,7 @@ namespace ArwinTolentino.CookingRecipePortal.Windows.Users
             showData();
 
         }
-        private void showData()
+        public void showData()
         {
             var Users = UserBLL.Search(pageIndex, pageSize, sortBy, sortOrder, keyword);
             dgUsers.ItemsSource = Users.Items;
@@ -121,6 +122,14 @@ namespace ArwinTolentino.CookingRecipePortal.Windows.Users
         {
             UserAdd addWindow = new Users.UserAdd(this);
             addWindow.Show();
+        }
+
+        private void btnUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            User user = ((FrameworkElement)sender).DataContext as User;
+            UserUpdate updateForm = new UserUpdate(user, this);
+            updateForm.Show();
+
         }
     }
 }

@@ -51,11 +51,11 @@ namespace ArwinTolentino.CookingRecipePortal.Windows.BLL
 
             return recipes;
         }
-        public static Operation Add(Recipe recipes)
+        public static Operation Add(Recipe recipe)
         {
             try
             {
-                db.Recipes.Add(recipes);
+                db.Recipes.Add(recipe);
                 db.SaveChanges();
 
                 return new Operation()
@@ -63,12 +63,56 @@ namespace ArwinTolentino.CookingRecipePortal.Windows.BLL
                 {
                     Code = "200",
                     Message = "ok",
-                    ReferenceId =  recipes.RecipeID
+                    ReferenceId =  recipe.RecipeID
                 };
 
             }
             catch (Exception e)
             {
+                return new Operation()
+                {
+                    Code = "500",
+                    Message = e.Message
+                };
+            }
+        }
+
+        public static Operation Update(Recipe newRecord)
+        {
+            try
+            {
+                Recipe oldRecord = db.Recipes.FirstOrDefault(e => e.RecipeID == newRecord.RecipeID);
+
+                if (oldRecord != null)
+                {
+                    oldRecord.Ingredients = newRecord.Ingredients;
+                    oldRecord.UnitMeasure = newRecord.UnitMeasure;
+                    oldRecord.Price = newRecord.Price;
+                    oldRecord.Instruction = newRecord.UnitMeasure;
+                    oldRecord.Title = newRecord.Title;
+
+                    db.SaveChanges();
+
+                    return new Operation()
+                    {
+                        Code = "200",
+                        Message = "OK"
+                    };
+
+
+
+
+                }
+                return new Operation()
+                {
+                    Code = "500",
+                    Message = "Not Found"
+                };
+
+            }
+            catch (Exception e)
+            {
+
                 return new Operation()
                 {
                     Code = "500",

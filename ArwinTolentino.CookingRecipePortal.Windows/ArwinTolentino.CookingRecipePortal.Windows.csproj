@@ -91,14 +91,23 @@
     <Compile Include="Ingredients\IngList.xaml.cs">
       <DependentUpon>IngList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Ingredients\IngUpdate.xaml.cs">
+      <DependentUpon>IngUpdate.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Recipes\List.xaml.cs">
       <DependentUpon>List.xaml</DependentUpon>
     </Compile>
     <Compile Include="Recipes\RecipeAdd.xaml.cs">
       <DependentUpon>RecipeAdd.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Recipes\RecipeUpdate.xaml.cs">
+      <DependentUpon>RecipeUpdate.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tags\TagAdd.xaml.cs">
       <DependentUpon>TagAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tags\TagUpdate.xaml.cs">
+      <DependentUpon>TagUpdate.xaml</DependentUpon>
     </Compile>
     <Compile Include="Tags\TgList.xaml.cs">
       <DependentUpon>TgList.xaml</DependentUpon>
@@ -109,11 +118,18 @@
     <Compile Include="Users\UserAdd.xaml.cs">
       <DependentUpon>UserAdd.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Users\UserUpdate.xaml.cs">
+      <DependentUpon>UserUpdate.xaml</DependentUpon>
+    </Compile>
     <Page Include="Ingredients\IngAdd.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Ingredients\IngList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ingredients\IngUpdate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -139,7 +155,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Recipes\RecipeUpdate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Tags\TagAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tags\TagUpdate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -152,6 +176,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Users\UserAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Users\UserUpdate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

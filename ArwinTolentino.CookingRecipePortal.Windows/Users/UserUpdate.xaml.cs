@@ -11,21 +11,29 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using ArwinTolentino.CookingRecipePortal.Windows.BLL;
 using ArwinTolentino.CookingRecipePortal.Windows.Models;
+using ArwinTolentino.CookingRecipePortal.Windows.BLL;
 
-namespace ArwinTolentino.CookingRecipePortal.Windows.Tags
+namespace ArwinTolentino.CookingRecipePortal.Windows.Users
 {
     /// <summary>
-    /// Interaction logic for TagAdd.xaml
+    /// Interaction logic for UserUpdate.xaml
     /// </summary>
-    public partial class TagAdd : Window
+    public partial class UserUpdate : Window
     {
-        TgList myParentWindow = new TgList();
-        public TagAdd(TgList parentWindow)
+        UrList myParentWindow = new UrList();
+        private User thisUser;
+
+        public UserUpdate(User users,UrList parentWindow)
         {
             InitializeComponent();
             myParentWindow = parentWindow;
+            thisUser = users;
+
+            txtEmailAddress.Text = thisUser.EmailAddress;
+            txtFirstName.Text = thisUser.FirstName;
+            txtLastName.Text = thisUser.LastName;
+            txtPassword.Text = thisUser.Password;
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
@@ -33,15 +41,16 @@ namespace ArwinTolentino.CookingRecipePortal.Windows.Tags
             this.Close();
         }
 
-        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            var op = TagBLL.Add(new Tag()
+            var op = UserBLL.Update(new User()
             {
-                Title = txtTitle.Text,
-                Price = txtPrice.Text,
-               
+      UserID = thisUser.UserID,
+      EmailAddress = txtEmailAddress.Text,
+      FirstName = txtFirstName.Text,
+      LastName = txtLastName.Text,
+      Password = txtPassword.Text
             });
-
             if (op.Code != "200")
             {
                 MessageBox.Show("Error : " + op.Message);
@@ -49,11 +58,12 @@ namespace ArwinTolentino.CookingRecipePortal.Windows.Tags
             }
             else
             {
-                MessageBox.Show("Tag is Succesfully added to table");
+                MessageBox.Show("Succesfully Update");
 
             }
             myParentWindow.showData();
             this.Close();
+
         }
     }
 }

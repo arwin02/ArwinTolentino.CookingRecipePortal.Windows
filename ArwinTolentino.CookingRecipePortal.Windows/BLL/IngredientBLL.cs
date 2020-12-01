@@ -75,5 +75,46 @@ namespace ArwinTolentino.CookingRecipePortal.Windows.BLL
                 };
             }
         }
+        public static Operation Update(Ingredient newRecord)
+        {
+            try
+            {
+                Ingredient oldRecord = db.Ingredients.FirstOrDefault(e => e.Name == newRecord.Name);
+
+                if(oldRecord != null)
+                {
+                    oldRecord.Name = newRecord.Name;
+                    oldRecord.UnitMeasure = newRecord.UnitMeasure;
+
+                    db.SaveChanges();
+
+                    return new Operation()
+                    {
+                        Code = "200",
+                        Message = "OK"
+                    };
+
+
+
+
+                }
+                return new Operation()
+                {
+                    Code = "500",
+                    Message = "Not Found"
+                };
+                
+            }
+            catch(Exception e )
+            {
+
+                return new Operation()
+                {
+                    Code = "500",
+                    Message = e.Message
+                };
+            }
+        }
+
     }
 }

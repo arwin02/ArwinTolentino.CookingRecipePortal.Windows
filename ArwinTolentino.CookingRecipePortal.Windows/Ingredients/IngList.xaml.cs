@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using ArwinTolentino.CookingRecipePortal.Windows.BLL;
+using ArwinTolentino.CookingRecipePortal.Windows.Models;
 
 namespace ArwinTolentino.CookingRecipePortal.Windows.Ingredients
 {
@@ -35,17 +36,19 @@ namespace ArwinTolentino.CookingRecipePortal.Windows.Ingredients
             showData();
 
         }
-        private void showData()
+        public void showData()
         {
             var Ingredients = IngredientBLL.Search(pageIndex, pageSize, sortBy, sortOrder, keyword);
             dgIngredients1.ItemsSource = Ingredients.Items;
             pageCount = Ingredients.PageCount;
         }
 
+
         private void cboSortBy_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             sortBy = cboSortBy.SelectedValue.ToString();
             showData();
+
         }
 
         private void cboSortOrder_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -122,5 +125,14 @@ namespace ArwinTolentino.CookingRecipePortal.Windows.Ingredients
             addWindow.Show();
 
         }
+
+        private void btnUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            Ingredient ingredient = ((FrameworkElement)sender).DataContext as Ingredient;
+            IngUpdate updateForm = new IngUpdate(ingredient, this);
+            updateForm.Show();
+
+        }
+
     }
 }

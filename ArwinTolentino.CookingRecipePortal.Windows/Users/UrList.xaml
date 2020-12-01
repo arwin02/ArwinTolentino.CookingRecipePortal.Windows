@@ -14,7 +14,25 @@
         </Grid.ColumnDefinitions>
         <Label x:Name="lblFilters1" Content="FILTERS :" HorizontalAlignment="Left" Height="34" Margin="26,30,0,0" VerticalAlignment="Top" Width="415" FontWeight="Bold" Grid.ColumnSpan="2"/>
         <TextBox x:Name="txtFilters" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="36" Margin="26,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="415"/>
-        <DataGrid x:Name="dgUsers" HorizontalAlignment="Left" Height="278" Margin="26,131,0,0" VerticalAlignment="Top" Width="609" Grid.ColumnSpan="2"/>
+        <DataGrid x:Name="dgUsers" HorizontalAlignment="Left" Height="278" Margin="26,131,0,0" VerticalAlignment="Top" Width="609" Grid.ColumnSpan="2" AutoGenerateColumns="False" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="First Name"
+                      Binding="{Binding FirstName}" Width="*" />
+                <DataGridTextColumn Header="LastName"
+                      Binding="{Binding LastName}" Width="*" />
+                <DataGridTextColumn Header="Email Address"
+                      Binding="{Binding EmailAddress}" Width="*" />
+                <DataGridTextColumn Header="Password"
+                      Binding="{Binding Password}" Width="*" />
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btnUpdate" Click="btnUpdate_Click">Update</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
         <Button x:Name="btnNext" Content="NEXT" Grid.Column="1" HorizontalAlignment="Left" Margin="362,136,0,0" VerticalAlignment="Top" Width="84" Height="37" Grid.ColumnSpan="2"/>
         <Button x:Name="btnPrev" Content="PREV." Grid.Column="1" HorizontalAlignment="Left" Margin="362,178,0,0" VerticalAlignment="Top" Width="84" Height="38" Grid.ColumnSpan="2"/>
         <Button x:Name="btnFirst" Content="FIRST" Grid.Column="1" HorizontalAlignment="Left" Margin="362,221,0,0" VerticalAlignment="Top" Width="84" Height="38" Grid.ColumnSpan="2"/>

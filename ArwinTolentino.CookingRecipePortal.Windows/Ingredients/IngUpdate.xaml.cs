@@ -17,43 +17,48 @@ using ArwinTolentino.CookingRecipePortal.Windows.Models;
 namespace ArwinTolentino.CookingRecipePortal.Windows.Ingredients
 {
     /// <summary>
-    /// Interaction logic for IngAdd.xaml
+    /// Interaction logic for IngUpdate.xaml
     /// </summary>
-    public partial class IngAdd : Window
+    public partial class IngUpdate : Window
     {
         IngList myParentWindow = new IngList();
-        public IngAdd(IngList ParentWindow)
+        private Ingredient thisIngredient;
+        public IngUpdate(Ingredient ingredients,IngList ParentWindow)
         {
             InitializeComponent();
+            thisIngredient = ingredients;
             myParentWindow = ParentWindow;
 
+            txtName.Text = thisIngredient.Name;
+            txtUnitofMeasure.Text = thisIngredient.UnitMeasure;
+           
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
-        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            var op = IngredientBLL.Add(new Ingredient()
+            var op = IngredientBLL.Update(new Ingredient()
             {
                 Name = txtName.Text,
-                UnitMeasure = txtUnitofMeasure.Text,
+                UnitMeasure = txtUnitofMeasure.Text
             });
-
-            if (op.Code !="200")
+            if (op.Code != "200")
             {
                 MessageBox.Show("Error : " + op.Message);
 
             }
             else
             {
-                MessageBox.Show("Ingredient is Succesfully added to table");
+                MessageBox.Show("Succesfully Update");
 
             }
             myParentWindow.showData();
             this.Close();
+
         }
     }
 }

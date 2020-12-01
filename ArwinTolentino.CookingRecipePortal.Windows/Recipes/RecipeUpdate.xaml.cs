@@ -11,37 +11,48 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using ArwinTolentino.CookingRecipePortal.Windows.BLL;
 using ArwinTolentino.CookingRecipePortal.Windows.Models;
+using ArwinTolentino.CookingRecipePortal.Windows.BLL;
 
 namespace ArwinTolentino.CookingRecipePortal.Windows.Recipes
 {
     /// <summary>
-    /// Interaction logic for RecipeAdd.xaml
+    /// Interaction logic for RecipeUpdate.xaml
     /// </summary>
-    public partial class RecipeAdd : Window
+    public partial class RecipeUpdate : Window
     {
         List myParentWindow = new List();
-        public RecipeAdd(List parentWindow)
+        private Recipe thisRecipe;
+        public RecipeUpdate(Recipe recipes, List parentWindow)
         {
             InitializeComponent();
+            thisRecipe = recipes;
             myParentWindow = parentWindow;
+           
+
+            txtIngredients.Text = thisRecipe.Ingredients;
+            txtInstruction.Text = thisRecipe.Instruction;
+            txtTitle.Text = thisRecipe.Title;
+            txtPrice.Text = thisRecipe.Price;
+            txtUnitofMeasure.Text = thisRecipe.UnitMeasure;
         }
 
-        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
-            var op = RecipeBLL.Add(new Recipe()
+            this.Close();
+        }
+
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+            var op = RecipeBLL.Update(new Recipe()
             {
+                RecipeID = thisRecipe.RecipeID,
                 Ingredients = txtIngredients.Text,
-                Instruction = txtInstruction.Text,
-                Price = txtPrice.Text,
-                Title = txtTitle.Text,
                 UnitMeasure = txtUnitofMeasure.Text,
-                RecipeID = Guid.NewGuid()
-
-
+                Instruction = txtIngredients.Text,
+                Title = txtTitle.Text,
+                Price = txtPrice.Text
             });
-
             if (op.Code != "200")
             {
                 MessageBox.Show("Error : " + op.Message);
@@ -49,11 +60,12 @@ namespace ArwinTolentino.CookingRecipePortal.Windows.Recipes
             }
             else
             {
-                MessageBox.Show("Ingrediets is Succesfully added to table");
+                MessageBox.Show("Succesfully Update");
 
             }
             myParentWindow.showData();
             this.Close();
+
         }
     }
 }

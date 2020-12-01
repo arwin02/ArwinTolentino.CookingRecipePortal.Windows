@@ -11,37 +11,41 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using ArwinTolentino.CookingRecipePortal.Windows.BLL;
 using ArwinTolentino.CookingRecipePortal.Windows.Models;
+using ArwinTolentino.CookingRecipePortal.Windows.BLL;
 
 namespace ArwinTolentino.CookingRecipePortal.Windows.Tags
 {
     /// <summary>
-    /// Interaction logic for TagAdd.xaml
+    /// Interaction logic for TagUpdate.xaml
     /// </summary>
-    public partial class TagAdd : Window
+    public partial class TagUpdate : Window
     {
         TgList myParentWindow = new TgList();
-        public TagAdd(TgList parentWindow)
+        private Tag thisTag;
+        public TagUpdate(Tag tags,TgList parentWindow)
         {
             InitializeComponent();
             myParentWindow = parentWindow;
-        }
+            thisTag = tags;
 
+            txtPrice.Text = thisTag.Price;
+            txtTitle.Text = thisTag.Title;
+                
+        }
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
-        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            var op = TagBLL.Add(new Tag()
+            var op = TagBLL.Update(new Tag()
             {
                 Title = txtTitle.Text,
-                Price = txtPrice.Text,
-               
+                FeedBack = thisTag.FeedBack,
+                Price = txtPrice.Text
             });
-
             if (op.Code != "200")
             {
                 MessageBox.Show("Error : " + op.Message);
@@ -49,11 +53,12 @@ namespace ArwinTolentino.CookingRecipePortal.Windows.Tags
             }
             else
             {
-                MessageBox.Show("Tag is Succesfully added to table");
+                MessageBox.Show("Succesfully Update");
 
             }
             myParentWindow.showData();
             this.Close();
+
         }
     }
 }

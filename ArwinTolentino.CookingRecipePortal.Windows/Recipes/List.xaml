@@ -8,7 +8,28 @@
         Title="List" Height="426" Width="800">
     <Grid>
         <Button x:Name="btnNext" Content="NEXT" HorizontalAlignment="Left" Margin="684,109,0,0" VerticalAlignment="Top" Width="74" Click="btnNext_Click" Height="35"/>
-        <DataGrid x:Name="dgRecipes" HorizontalAlignment="Left" Height="284" Margin="27,109,0,0" VerticalAlignment="Top" Width="620"/>
+        <DataGrid x:Name="dgRecipes" HorizontalAlignment="Left" Height="284" Margin="27,109,0,0" VerticalAlignment="Top" Width="620" AutoGenerateColumns="False" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Title"
+                      Binding="{Binding Title}" Width="*" />
+            <DataGridTextColumn Header="Ingredients"
+                      Binding="{Binding Ingredients}" Width="*" />
+            <DataGridTextColumn Header="Instruction"
+                      Binding="{Binding Instruction}" Width="*" />
+            <DataGridTextColumn Header="Unit Measure"
+                      Binding="{Binding UnitMeasure}" Width="*" />
+            <DataGridTextColumn Header="Price"
+                      Binding="{Binding Price}" Width="*" />
+            
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btnUpdate" Click="btnUpdate_Click">Update</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
         <Button x:Name="btnPrev" Content="PREV." HorizontalAlignment="Left" Margin="685,149,0,0" VerticalAlignment="Top" Width="73" Click="btnPrev_Click" Height="35"/>
         <Button x:Name="btnFirst" Content="FIRST" HorizontalAlignment="Left" Margin="684,189,0,0" VerticalAlignment="Top" Width="74" Click="btnFirst_Click" Height="38"/>
         <Button x:Name="btnLast" Content="LAST" HorizontalAlignment="Left" Margin="684,232,0,0" VerticalAlignment="Top" Width="74" Click="btnLast_Click" Height="38"/>
