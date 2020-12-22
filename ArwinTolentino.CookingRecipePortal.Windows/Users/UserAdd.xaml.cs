@@ -36,6 +36,37 @@ namespace ArwinTolentino.CookingRecipePortal.Windows.Users
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
+            List<string> errors = new List<string>();
+            if (string.IsNullOrEmpty(txtFirstName.Text))
+            {
+                errors.Add("First Name is required.");
+            };
+
+            if (string.IsNullOrEmpty(txtLastName.Text))
+            {
+                errors.Add("Last Name is required.");
+            };
+
+            if (string.IsNullOrEmpty(txtPassword.Text))
+            {
+                errors.Add("Password is required.");
+            };
+
+            if (string.IsNullOrEmpty(txtEmailAddress.Text))
+            {
+                errors.Add("Email is required.");
+            };
+
+            var message = string.Join(Environment.NewLine, errors);
+            
+            if (errors.Count > 0)
+
+            {
+                MessageBox.Show(message);
+            }
+
+            else { 
+
             var op = UserBLL.Add(new User()
             {
                 FirstName = txtFirstName.Text,
@@ -57,7 +88,8 @@ namespace ArwinTolentino.CookingRecipePortal.Windows.Users
                 MessageBox.Show("User is Succesfully added to table");
 
             }
-            
+
+            }
         }
     }
 }

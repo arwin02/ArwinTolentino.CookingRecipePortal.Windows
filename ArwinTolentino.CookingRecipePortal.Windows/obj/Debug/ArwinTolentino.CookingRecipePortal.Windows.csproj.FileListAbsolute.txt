@@ -46,3 +46,5 @@ C:\Users\Arwin\Documents\ArwinTolentino.CookingRecipePortal.Windows\ArwinTolenti
 C:\Users\Arwin\Documents\ArwinTolentino.CookingRecipePortal.Windows\ArwinTolentino.CookingRecipePortal.Windows\obj\Debug\Recipes\RecipeUpdate.baml
 C:\Users\Arwin\Documents\ArwinTolentino.CookingRecipePortal.Windows\ArwinTolentino.CookingRecipePortal.Windows\obj\Debug\Tags\TagUpdate.baml
 C:\Users\Arwin\Documents\ArwinTolentino.CookingRecipePortal.Windows\ArwinTolentino.CookingRecipePortal.Windows\obj\Debug\Users\UserUpdate.baml
+C:\Users\Arwin\Documents\ArwinTolentino.CookingRecipePortal.Windows\ArwinTolentino.CookingRecipePortal.Windows\obj\Debug\LoginWindow.g.cs
+C:\Users\Arwin\Documents\ArwinTolentino.CookingRecipePortal.Windows\ArwinTolentino.CookingRecipePortal.Windows\obj\Debug\LoginWindow.baml

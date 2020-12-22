@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Arwin\Documents\ArwinTolentino.CookingRecipePortal.Windows\ArwinTolentino.CookingRecipePortal.Windows\App.xaml
-13-1449235265
+14-563000321
 
-30-1663374590
+31365418715
 26-1686153386
-Ingredients\IngAdd.xaml;Ingredients\IngList.xaml;Ingredients\IngUpdate.xaml;MainWindow.xaml;Recipes\List.xaml;Recipes\RecipeAdd.xaml;Recipes\RecipeUpdate.xaml;Tags\TagAdd.xaml;Tags\TagUpdate.xaml;Tags\TgList.xaml;Users\UrList.xaml;Users\UserAdd.xaml;Users\UserUpdate.xaml;
+Ingredients\IngAdd.xaml;Ingredients\IngList.xaml;Ingredients\IngUpdate.xaml;LoginWindow.xaml;MainWindow.xaml;Recipes\List.xaml;Recipes\RecipeAdd.xaml;Recipes\RecipeUpdate.xaml;Tags\TagAdd.xaml;Tags\TagUpdate.xaml;Tags\TgList.xaml;Users\UrList.xaml;Users\UserAdd.xaml;Users\UserUpdate.xaml;
 
 True
 
