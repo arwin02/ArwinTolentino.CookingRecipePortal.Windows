@@ -106,13 +106,14 @@ namespace ArwinTolentino.CookingRecipePortal.Windows.Tags
             }
 
             private void txtPageSize_TextChanged(object sender, TextChangedEventArgs e)
-            {
-                if (txtPageSize.Text.Length > 0)
-                {
-                    int.TryParse(txtPageSize.Text, out pageSize);
-                }
+        {
+                 if (txtPageSize.Text.Length > 0)
+              {
+                int.TryParse(txtPageSize.Text, out pageSize);
+              }
 
-            }
+                  showData();
+        }
 
         private void dgTag_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -132,11 +133,28 @@ namespace ArwinTolentino.CookingRecipePortal.Windows.Tags
 
         }
 
-        private void txtPageSize_TextChanged(object sender, KeyEventArgs e)
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
+            Tag tags = ((FrameworkElement)sender).DataContext as Tag;
 
+            if (MessageBox.Show("Are you sure you want to delete " + tags.Title + "?",
+                        "Are you sure?", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                var op = TagBLL.Delete(tags.Title);
+
+                if (op.Code != "200")
+                {
+                    MessageBox.Show("Error : " + op.Message);
+                }
+                else
+                {
+                    MessageBox.Show("Tag is successfully deleted from table");
+                    showData();
+                }
+            };
         }
+
     }
-    }
+}
 
 

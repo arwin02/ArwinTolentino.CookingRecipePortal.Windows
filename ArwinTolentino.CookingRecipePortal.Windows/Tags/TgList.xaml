@@ -7,10 +7,7 @@
         mc:Ignorable="d"
         Title="TgList" Height="450" Width="800">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="175*"/>
-            <ColumnDefinition Width="618*"/>
-        </Grid.ColumnDefinitions>
+
         <DataGrid x:Name="dgTag" HorizontalAlignment="Left" Height="299" Margin="27,110,0,0" VerticalAlignment="Top" Width="612" Grid.ColumnSpan="2" SelectionChanged="dgTag_SelectionChanged" AutoGenerateColumns="False" CanUserAddRows="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Title"
@@ -27,21 +24,28 @@
                     </DataTemplate>
                 </DataGridTemplateColumn.CellTemplate>
             </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btnDelete" Click="btnDelete_Click">Delete</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="btnNext" Content="NEXT" HorizontalAlignment="Left" Margin="499.5,110,0,0" VerticalAlignment="Top" Width="86" RenderTransformOrigin="0.52,1.55" Height="40" Click="btnNext_Click" Grid.Column="1"/>
-        <Button x:Name="btnPrev" Content="PREV." HorizontalAlignment="Left" VerticalAlignment="Top" Width="86" Margin="499.5,155,0,0" Height="40" Grid.Column="1"/>
-        <Button x:Name="btnFirst" Content="FIRST " HorizontalAlignment="Left" Margin="499.5,200,0,0" VerticalAlignment="Top" Width="86" Height="40" Grid.Column="1"/>
-        <Button x:Name="btnLast" Content="LAST" HorizontalAlignment="Left" Margin="499.5,245,0,0" VerticalAlignment="Top" Width="86" Height="40" Grid.Column="1"/>
-        <TextBox x:Name="txtPageSize" HorizontalAlignment="Left" Height="42" Margin="499,335,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="86" Grid.Column="1" KeyDown="txtPageSize_TextChanged"/>
-        <Label x:Name="lblPageSize" Content="PAGE SIZE" HorizontalAlignment="Left" Margin="499,382,0,0" VerticalAlignment="Top" Width="86" Height="27" Grid.Column="1"/>
-        <ComboBox x:Name="cboSortOrder" HorizontalAlignment="Left" Margin="432.5,59,0,0" VerticalAlignment="Top" Width="153" Height="31" Grid.Column="1"/>
-        <ComboBox x:Name="cboSortBy" HorizontalAlignment="Left" Height="31" Margin="274.5,59,0,0" VerticalAlignment="Top" Width="153" Grid.Column="1"/>
-        <TextBox x:Name="txtFilters" HorizontalAlignment="Left" Height="31" Margin="27,59,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="402" Grid.ColumnSpan="2"/>
-        <Label x:Name="lblFilters" Content="FILTERS :" HorizontalAlignment="Left" Margin="27,28,0,0" VerticalAlignment="Top" Width="152" FontWeight="Bold" Height="26" Grid.ColumnSpan="2"/>
-        <Label x:Name="lblSortOrder1" Content="SORT BY :" HorizontalAlignment="Left" Height="26" Margin="274.5,28,0,0" VerticalAlignment="Top" Width="153" FontWeight="Bold" Grid.Column="1"/>
-        <Label x:Name="lblSortOrder" Content="SORT ORDER :" HorizontalAlignment="Left" Margin="432.5,29,0,0" VerticalAlignment="Top" Width="153" FontWeight="Bold" Grid.Column="1"/>
-        <Button x:Name="btnAddNew" Content="ADD NEW" Grid.Column="1" HorizontalAlignment="Left" Height="40" Margin="499,290,0,0" VerticalAlignment="Top" Width="86" Click="btnAddNew_Click"/>
+        <Button x:Name="btnNext" Content="NEXT" HorizontalAlignment="Left" Margin="684,109,0,0" VerticalAlignment="Top" Width="74" Click="btnNext_Click" Height="35"/>
+        <Button x:Name="btnPrev" Content="PREV." HorizontalAlignment="Left" Margin="685,149,0,0" VerticalAlignment="Top" Width="73" Click="btnPrev_Click" Height="35"/>
+        <Button x:Name="btnFirst" Content="FIRST" HorizontalAlignment="Left" Margin="684,189,0,0" VerticalAlignment="Top" Width="74" Click="btnFirst_Click" Height="38"/>
+        <Button x:Name="btnLast" Content="LAST" HorizontalAlignment="Left" Margin="684,232,0,0" VerticalAlignment="Top" Width="74" Click="btnLast_Click" Height="38"/>
+        <Label x:Name="lblPageSize" Content="PAGE SIZE" HorizontalAlignment="Left" Margin="684,359,0,0" VerticalAlignment="Top" Width="73" FontWeight="Bold"/>
+        <TextBox x:Name="txtPageSize" HorizontalAlignment="Left" Height="35" Margin="684,319,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="73" TextChanged="txtPageSize_TextChanged"/>
+        <Label x:Name="lblSortby" Content="SORT BY ;" HorizontalAlignment="Left" Margin="444,21,0,0" VerticalAlignment="Top" Width="155" Height="26" FontWeight="Bold"/>
+        <TextBox x:Name="txtFilters" HorizontalAlignment="Left" Height="37" Margin="27,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="385"  KeyDown="txtFilters_KeyDown"/>
+        <Label x:Name="lblFilters" Content="FILTERS :" HorizontalAlignment="Left" Margin="27,21,0,0" VerticalAlignment="Top" FontWeight="Bold" Width="385"/>
+        <Label x:Name="lblSortOrder" Content="SORT ORDER :" HorizontalAlignment="Left" Margin="604,21,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.342,-0.288" Width="155" Height="26" FontWeight="Bold"/>
+        <ComboBox x:Name="cboSortBy" HorizontalAlignment="Left" Margin="444,56,0,0" VerticalAlignment="Top" Width="155" Height="37" SelectionChanged="cboSortBy_SelectionChanged"/>
+        <ComboBox x:Name="cboSortOrder" HorizontalAlignment="Left" Margin="604,55,0,0" VerticalAlignment="Top" Width="154" Height="38" SelectionChanged="cboSortOrder_SelectionChanged"/>
+        <Button x:Name="btnAddNew" Content="ADD NEW" HorizontalAlignment="Left" Height="38" Margin="683,276,0,0" VerticalAlignment="Top" Width="74" Click="btnAddNew_Click"/>
 
     </Grid>
 </Window>

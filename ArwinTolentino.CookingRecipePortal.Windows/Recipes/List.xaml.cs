@@ -132,6 +132,26 @@ namespace ArwinTolentino.CookingRecipePortal.Windows.Recipes
             updateForm.Show();
 
         }
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            Recipe recipe = ((FrameworkElement)sender).DataContext as Recipe;
+
+            if (MessageBox.Show("Are you sure you want to delete " + recipe.Title + "?",
+                        "Are you sure?", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                var op = RecipeBLL.Delete(recipe.RecipeID);
+
+                if (op.Code != "200")
+                {
+                    MessageBox.Show("Error : " + op.Message);
+                }
+                else
+                {
+                    MessageBox.Show("Recipe is successfully deleted from table");
+                    showData();
+                }
+            };
+        }
 
     }
 

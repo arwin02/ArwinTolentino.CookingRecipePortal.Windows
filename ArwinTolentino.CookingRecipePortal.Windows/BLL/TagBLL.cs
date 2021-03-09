@@ -26,16 +26,18 @@ namespace ArwinTolentino.CookingRecipePortal.Windows.BLL
             var skip = pageSize * (pageIndex - 1);
 
             long pageCount = (long)Math.Ceiling((decimal)(queryCount / pageSize));
+            if ((queryCount % pageSize) > 0)
+            { pageCount += 1; }
 
-            if (sortBy.ToLower() == "Title" && sortOrder.ToLower() == "asc")
+            if (sortBy.ToLower() == "title" && sortOrder.ToLower() == "asc")
             {
                 tags.Items = allTag.OrderBy(e => e.Title).Skip(skip).Take(pageSize).ToList();
             }
-            else if (sortBy.ToLower() == "Title" && sortOrder.ToLower() == "desc")
+            else if (sortBy.ToLower() == "title" && sortOrder.ToLower() == "desc")
             {
                 tags.Items = allTag.OrderByDescending(e => e.Title).Skip(skip).Take(pageSize).ToList();
             }
-            else if (sortBy.ToLower() == "Price" && sortOrder.ToLower() == "asc")
+            else if (sortBy.ToLower() == "price" && sortOrder.ToLower() == "asc")
             {
                 tags.Items = allTag.OrderBy(e => e.Price).Skip(skip).Take(pageSize).ToList();
             }
@@ -110,6 +112,41 @@ namespace ArwinTolentino.CookingRecipePortal.Windows.BLL
             catch (Exception e)
             {
 
+                return new Operation()
+                {
+                    Code = "500",
+                    Message = e.Message
+                };
+            }
+        }
+
+        public static Operation Delete(string tagname)
+        {
+            try
+            {
+                Tag oldRecord = db.Tags.FirstOrDefault(e => e.Title == tagname);
+
+                if (oldRecord != null)
+                {
+                    db.Tags.Remove(oldRecord);
+
+                    db.SaveChanges();
+
+                    return new Operation()
+                    {
+                        Code = "200",
+                        Message = "OK"
+                    };
+                }
+
+                return new Operation()
+                {
+                    Code = "500",
+                    Message = "Not found"
+                };
+            }
+            catch (Exception e)
+            {
                 return new Operation()
                 {
                     Code = "500",

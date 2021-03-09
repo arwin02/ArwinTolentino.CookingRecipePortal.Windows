@@ -27,6 +27,8 @@ namespace ArwinTolentino.CookingRecipePortal.Windows.BLL
             var skip = pageSize * (pageIndex - 1);
 
             long pageCount = (long)Math.Ceiling((decimal)(queryCount / pageSize));
+            if ((queryCount % pageSize) > 0)
+            { pageCount += 1; }
 
             if (sortBy.ToLower() == "title" && sortOrder.ToLower() == "asc")
             {
@@ -120,6 +122,41 @@ namespace ArwinTolentino.CookingRecipePortal.Windows.BLL
                 };
             }
         }
+        public static Operation Delete(Guid? recipeId)
+        {
+            try
+            {
+                Recipe oldRecord = db.Recipes.FirstOrDefault(e => e.RecipeID == recipeId);
+
+                if (oldRecord != null)
+                {
+                    db.Recipes.Remove(oldRecord);
+
+                    db.SaveChanges();
+
+                    return new Operation()
+                    {
+                        Code = "200",
+                        Message = "OK"
+                    };
+                }
+
+                return new Operation()
+                {
+                    Code = "500",
+                    Message = "Not found"
+                };
+            }
+            catch (Exception e)
+            {
+                return new Operation()
+                {
+                    Code = "500",
+                    Message = e.Message
+                };
+            }
+        }
+
     }
 }
 

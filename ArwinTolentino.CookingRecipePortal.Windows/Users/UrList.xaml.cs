@@ -32,7 +32,7 @@ namespace ArwinTolentino.CookingRecipePortal.Windows.Users
         {
             InitializeComponent();
 
-            cboSortBy.ItemsSource = new List<string>() { "UserID", "FirstName" };
+            cboSortBy.ItemsSource = new List<string>() { "LastName", "FirstName" };
             cboSortOrder.ItemsSource = new List<string>() { "Ascending", "Descending" };
             showData();
 
@@ -115,7 +115,8 @@ namespace ArwinTolentino.CookingRecipePortal.Windows.Users
             {
                 int.TryParse(txtPageSize.Text, out pageSize);
             }
-            InitializeComponent();
+
+            showData();
         }
 
         private void btnAddNew_Click(object sender, RoutedEventArgs e)
@@ -130,6 +131,27 @@ namespace ArwinTolentino.CookingRecipePortal.Windows.Users
             UserUpdate updateForm = new UserUpdate(user, this);
             updateForm.Show();
 
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            User user = ((FrameworkElement)sender).DataContext as User;
+
+            if (MessageBox.Show("Are you sure you want to delete " + user.FirstName + " " + user.LastName + "?",
+                        "Are you sure?", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                var op = UserBLL.Delete(user.UserID);
+
+                if (op.Code != "200")
+                {
+                    MessageBox.Show("Error : " + op.Message);
+                }
+                else
+                {
+                    MessageBox.Show("User is successfully deleted from table");
+                    showData();
+                }
+            };
         }
     }
 }

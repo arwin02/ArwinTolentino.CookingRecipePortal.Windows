@@ -117,6 +117,8 @@ namespace ArwinTolentino.CookingRecipePortal.Windows.Ingredients
                 int.TryParse(txtPageSize.Text, out pageSize);
             }
 
+            showData();
+
         }
 
         private void btnAddNew_Click(object sender, RoutedEventArgs e)
@@ -134,5 +136,25 @@ namespace ArwinTolentino.CookingRecipePortal.Windows.Ingredients
 
         }
 
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            Ingredient ingredient = ((FrameworkElement)sender).DataContext as Ingredient;
+
+            if (MessageBox.Show("Are you sure you want to delete " + ingredient.Name + "?",
+                        "Are you sure?", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                var op = IngredientBLL.Delete(ingredient.Name);
+
+                if (op.Code != "200")
+                {
+                    MessageBox.Show("Error : " + op.Message);
+                }
+                else
+                {
+                    MessageBox.Show("Ingredient is successfully deleted from table");
+                    showData();
+                }
+            };
+        }
     }
 }

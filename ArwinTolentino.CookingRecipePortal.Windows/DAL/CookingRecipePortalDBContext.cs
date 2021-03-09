@@ -12,7 +12,7 @@ namespace ArwinTolentino.CookingRecipePortal.Windows.DAL
     {
         public CookingRecipePortalDBContext() : base("myConnectionstring")
         {
-          //Database.SetInitializer(new ArwinTolentino.CookingRecipePortal.Windows.DAL.DataIntializer());
+          Database.SetInitializer(new ArwinTolentino.CookingRecipePortal.Windows.DAL.DataIntializer());
         }
         public DbSet<Models.User> Users { get; set; }
         public DbSet<Models.Recipe> Recipes { get; set; }
